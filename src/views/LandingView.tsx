@@ -27,8 +27,8 @@ const LandingView: React.FC = () => {
                         The ultimate mission control for your AI squads. Monitor, deploy, and scale autonomous agents with unprecedented precision and security.
                     </p>
                     <div className="hero-actions animate-fade-in-up delay-300">
-                        <button className="btn-primary-glow" onClick={() => navigate('/mission')}>
-                            Launch Mission Control <ChevronRight size={18} />
+                        <button className="btn-primary-glow" onClick={() => navigate('/hq')}>
+                            Launch HQ <ChevronRight size={18} />
                         </button>
                         <button className="btn-outline">
                             <Code size={18} className="mr-2" />

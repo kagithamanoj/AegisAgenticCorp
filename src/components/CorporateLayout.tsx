@@ -13,7 +13,7 @@ const CorporateLayout: React.FC = () => {
             <nav className={`corp-navbar ${isScrolled ? 'scrolled' : ''}`}>
                 <div className="nav-container">
                     <div className="logo-group" onClick={() => navigate('/')}>
-                        <img src="/logo.svg" alt="AegisCorp Agentic Intelligence Logo" style={{ width: 28, height: 28 }} />
+                        <img src="logo.svg" alt="AegisCorp Agentic Intelligence Logo" style={{ width: 28, height: 28 }} />
                         <span className="logo-text" style={{ fontFamily: 'var(--font-serif)', letterSpacing: '-0.02em', fontSize: '18px', fontWeight: 600 }}>AegisCorp Agentic Intelligence</span>
                     </div>
 
@@ -28,7 +28,7 @@ const CorporateLayout: React.FC = () => {
 
                     <div className="nav-actions">
                         <button className="btn-login">Log In</button>
-                        <button className="btn-launch" onClick={() => navigate('/mission')}>
+                        <button className="btn-launch" onClick={() => navigate('/hq')}>
                             Launch HQ
                         </button>
                     </div>
@@ -43,7 +43,7 @@ const CorporateLayout: React.FC = () => {
                 <div className="footer-grid">
                     <div className="footer-brand-section">
                         <div className="logo-group mb-4">
-                            <img src="/logo.svg" alt="AegisCorp Agentic Intelligence" style={{ width: 24, height: 24 }} />
+                            <img src="logo.svg" alt="AegisCorp Agentic Intelligence" style={{ width: 24, height: 24 }} />
                             <span className="logo-text">AegisCorp Agentic Intelligence</span>
                         </div>
                         <p className="footer-tagline">Architecting the future of autonomous agentic intelligence.</p>
@@ -58,8 +58,8 @@ const CorporateLayout: React.FC = () => {
                         <h4>Platform</h4>
                         <span onClick={() => navigate('/products')}>Products</span>
                         <span onClick={() => navigate('/solutions')}>Solutions</span>
-                        <span onClick={() => navigate('/pricing')}>Pricing</span>
-                        <span onClick={() => navigate('/mission')}>Mission Control</span>
+                        <span onClick={() => navigate('/hq/pricing')}>Pricing</span>
+                        <span onClick={() => navigate('/hq')}>Mission Control</span>
                     </div>
 
                     <div className="footer-column">

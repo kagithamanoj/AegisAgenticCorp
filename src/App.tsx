@@ -53,13 +53,13 @@ function App() {
       </Route>
 
       {/* Internal App Routes */}
-      <Route path="/" element={<DashboardLayout><Outlet /></DashboardLayout>}>
+      <Route path="/hq" element={<DashboardLayout><Outlet /></DashboardLayout>}>
         <Route index element={<Dashboard />} />
         <Route path="mission" element={<MissionControl />} />
         <Route path="squad" element={<SquadView setActiveView={(v) => {
           // Fallback if SquadView internally still uses the old function. 
           // Ideally we update SquadView too, but this prevents crashes.
-          window.location.href = v.startsWith('channel-') ? `/channel/${v.split('-')[1]}` : `/${v}`;
+          window.location.href = v.startsWith('channel-') ? `/hq/channel/${v.split('-')[1]}` : `/hq/${v}`;
         }} />} />
         <Route path="settings" element={<SettingsView />} />
         <Route path="analytics" element={<AnalyticsView />} />

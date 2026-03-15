@@ -102,25 +102,25 @@ const Sidebar: React.FC = () => {
         <aside className="sidebar" style={{ display: 'flex', flexDirection: 'column' }}>
             <div className="sidebar-header">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <div className="company-logo" style={{ backgroundImage: 'url(/logo.svg)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', width: '32px', height: '32px' }}></div>
+                    <div className="company-logo" style={{ backgroundImage: 'url(logo.svg)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', width: '32px', height: '32px' }}></div>
                     <h2 style={{ fontSize: '18px', margin: 0, fontFamily: 'var(--font-serif)', letterSpacing: '-0.02em' }}>AegisCorp Agentic Intelligence</h2>
                 </div>
             </div>
 
             <nav className="sidebar-nav">
-                <button className={`nav-item ${location.pathname === '/' || location.pathname === '/dashboard' ? 'active' : ''}`} onClick={() => navigate('/')}>
+                <button className={`nav-item ${location.pathname === '/hq' || location.pathname === '/hq/dashboard' ? 'active' : ''}`} onClick={() => navigate('/hq')}>
                     <LayoutDashboard size={14} /> Dashboard
                 </button>
-                <button className={`nav-item ${location.pathname === '/mission' ? 'active' : ''}`} onClick={() => navigate('/mission')}>
+                <button className={`nav-item ${location.pathname === '/hq/mission' ? 'active' : ''}`} onClick={() => navigate('/hq/mission')}>
                     <Shield size={14} /> Mission Control
                 </button>
-                <button className={`nav-item ${location.pathname === '/squad' ? 'active' : ''}`} onClick={() => navigate('/squad')}>
+                <button className={`nav-item ${location.pathname === '/hq/squad' ? 'active' : ''}`} onClick={() => navigate('/hq/squad')}>
                     <Users size={14} /> My Squad
                 </button>
-                <button className={`nav-item ${location.pathname === '/analytics' ? 'active' : ''}`} onClick={() => navigate('/analytics')}>
+                <button className={`nav-item ${location.pathname === '/hq/analytics' ? 'active' : ''}`} onClick={() => navigate('/hq/analytics')}>
                     <BarChart3 size={14} /> ROI Report
                 </button>
-                <button className={`nav-item ${location.pathname === '/settings' ? 'active' : ''}`} onClick={() => navigate('/settings')}>
+                <button className={`nav-item ${location.pathname === '/hq/settings' ? 'active' : ''}`} onClick={() => navigate('/hq/settings')}>
                     <Settings name="Settings" size={14} /> Settings
                 </button>
             </nav>
@@ -132,7 +132,7 @@ const Sidebar: React.FC = () => {
                     <h3 className="section-title" style={{ padding: '0 20px', marginBottom: '8px', marginTop: '16px' }}>Projects</h3>
                     <nav className="sidebar-nav">
                         {projects.map(p => (
-                            <button key={p.id} className={`nav-item ${location.pathname === `/project/${p.id}` ? 'active' : ''}`} onClick={() => navigate(`/project/${p.id}`)}>
+                            <button key={p.id} className={`nav-item ${location.pathname === `/hq/project/${p.id}` ? 'active' : ''}`} onClick={() => navigate(`/hq/project/${p.id}`)}>
                                 <Briefcase size={14} /> {p.name}
                             </button>
                         ))}
@@ -149,7 +149,7 @@ const Sidebar: React.FC = () => {
 
                 <div className="squad-list">
                     {squad.map(agent => (
-                        <div key={agent.id} className="squad-member" onClick={() => navigate(`/channel/${agent.id}`)} style={{ cursor: 'pointer' }}>
+                        <div key={agent.id} className="squad-member" onClick={() => navigate(`/hq/channel/${agent.id}`)} style={{ cursor: 'pointer' }}>
                             <div className="squad-avatar-wrapper">
                                 <div className="squad-avatar">{agent.name.charAt(0)}</div>
                                 {agent.id === 'monica' && <span style={{ position: 'absolute', bottom: -4, right: -4, fontSize: '10px' }}>👑</span>}
