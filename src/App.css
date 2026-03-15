@@ -1,0 +1,117 @@
+.layout-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-main);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-main);
+  overflow: hidden;
+  position: relative;
+}
+
+.topbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-sidebar);
+}
+
+.topbar-stats {
+  display: flex;
+  gap: 24px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-item-button {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all var(--transition-speed) var(--transition-fluid);
+}
+
+.stat-item-button:hover {
+  background: rgba(47, 109, 246, 0.06);
+  border-color: var(--border-color);
+}
+
+.stat-item-button.active {
+  background: rgba(47, 109, 246, 0.09);
+  border-color: rgba(47, 109, 246, 0.18);
+}
+
+.stat-item-button:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-primary {
+  background-color: var(--accent-orange);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-secondary.active {
+  background-color: var(--accent-orange-light);
+  color: var(--accent-orange);
+  border-color: var(--accent-orange-light);
+}
+
+.content-area-wrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}

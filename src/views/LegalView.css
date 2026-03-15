@@ -1,0 +1,51 @@
+.legal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+    width: 100%;
+    animation: fadeInUp 0.5s ease;
+}
+
+.legal-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.legal-icon {
+    margin-bottom: 16px;
+    color: var(--accent-primary);
+}
+
+.legal-title {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.legal-meta {
+    color: var(--text-tertiary);
+    font-size: 14px;
+}
+
+.legal-content {
+    padding: 40px;
+}
+
+.legal-section {
+    margin-bottom: 32px;
+}
+
+.legal-section:last-child {
+    margin-bottom: 0;
+}
+
+.legal-section h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.legal-section p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}

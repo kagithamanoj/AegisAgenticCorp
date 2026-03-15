@@ -1,0 +1,24 @@
+---
+- name: Provision AegisCorp HQ Environment
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Ensure Node.js dependencies are installed
+      npm:
+        path: "{{ playbook_dir }}/.."
+        state: present
+
+    - name: Ensure .env file exists for Minimax integration
+      stat:
+        path: "{{ playbook_dir }}/../../.env"
+      register: env_file
+
+    - name: Fail if Minimax config is missing
+      fail:
+        msg: "The .env file with MINIMAX_API_KEY is required for AegisCorp HQ to function."
+      when: not env_file.stat.exists
+
+    - name: Start AegisCorp HQ Services
+      command: npm run dev
+      args:
+        chdir: "{{ playbook_dir }}/.."

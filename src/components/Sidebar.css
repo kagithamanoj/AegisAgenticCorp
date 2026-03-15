@@ -1,0 +1,226 @@
+.sidebar {
+    width: 280px;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 32px 0 24px;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 28px 36px;
+}
+
+.company-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.company-info h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 32px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 12px 28px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    transition: all var(--transition-speed) var(--transition-fluid);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.nav-item:active {
+    transform: scale(0.97);
+}
+
+.nav-item:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.nav-item.active {
+    color: var(--text-primary);
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 4px;
+    background-color: var(--accent-orange);
+    border-radius: 0 4px 4px 0;
+}
+
+
+
+.sidebar-squad {
+    padding: 0 16px;
+}
+
+.squad-header {
+    margin-bottom: 12px;
+    padding: 0 12px;
+}
+
+.section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-tertiary);
+    margin: 0;
+    font-weight: 700;
+}
+
+.squad-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.squad-member {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.squad-member:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.squad-avatar-wrapper {
+    position: relative;
+}
+
+.squad-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.squad-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.squad-name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.squad-name {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.squad-role {
+    font-size: 11px;
+    color: var(--text-tertiary);
+}
+
+.squad-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-text {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.roi-card-sidebar {
+    margin: 0 24px 32px;
+    padding: 18px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.roi-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--text-tertiary);
+}
+
+.roi-value {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--accent-green);
+    font-family: var(--font-serif);
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+
+.roi-progress-bg {
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: 2px;
+    overflow: hidden;
+}
+
+.roi-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-green) 0%, #34d399 100%);
+    border-radius: 2px;
+}
+
+.roi-footer {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}

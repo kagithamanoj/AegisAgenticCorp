@@ -1,0 +1,26 @@
+{
+    "session_id": "cycle-1162-1772765853",
+    "date": "2026-03-06T02:58:48.357000+00:00",
+    "critical": [
+        {
+            "title": "Heavy Market Movement Due to Iran War Escalation",
+            "source": "Bloomberg / Reuters",
+            "summary": "Global markets, including crypto, are experiencing massive volatility due to recent military escalations involving Iran. Traders are bracing for severe price swings.",
+            "relevance": "Critical"
+        }
+    ],
+    "important": [
+        {
+            "title": "Crypto Safe Haven Narrative Tested",
+            "source": "CoinDesk",
+            "summary": "Investors are closely watching if major cryptocurrencies act as safe havens or risk assets during the geopolitical crisis.",
+            "relevance": "High"
+        }
+    ],
+    "trending_keywords": [
+        "Iran War",
+        "Crypto Volatility",
+        "Geopolitics",
+        "Safe Haven"
+    ]
+}

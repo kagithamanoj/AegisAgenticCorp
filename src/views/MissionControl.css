@@ -1,0 +1,674 @@
+/* aegiscorp-hq/src/views/MissionControl.css */
+
+/* Core Command Center Layout */
+.hq-command-center {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 24px;
+    height: calc(100vh - var(--topbar-height) - 48px);
+    /* Account for padding */
+    padding: 24px;
+    background-color: var(--bg-main);
+    overflow: hidden;
+}
+
+/* Dispatch Zone (Left) */
+.hq-dispatch-zone {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+}
+
+/* Operations Zone (Right) */
+.hq-operations-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 100%;
+    min-height: 0;
+}
+
+/* Operations Header */
+.ops-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-radius: var(--border-radius-lg);
+}
+
+.ops-header-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ops-header-title h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+}
+
+.ops-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.ops-badge.alert {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--accent-red);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.ops-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ops-select {
+    min-width: 200px;
+    background-color: var(--bg-surface);
+}
+
+/* Board Container */
+.ops-board-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 24px;
+    min-height: 0;
+}
+
+/* Main Board Area */
+.ocx-board-center {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow-y: auto;
+    background: var(--bg-panel);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-subtle);
+    padding: 24px;
+    transition: box-shadow var(--transition-speed) var(--transition-fluid), border-color var(--transition-speed);
+}
+
+.ocx-board-center:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+}
+
+/* Inspector Side Panel */
+.ocx-inspector {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.ocx-side-panel {
+    background: var(--bg-panel);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: box-shadow var(--transition-speed) var(--transition-fluid);
+}
+
+.ocx-side-panel:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+}
+
+.ocx-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-subtle);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+/* Task Form Override */
+.ocx-task-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.ocx-row-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ocx-row-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Overriding old TaskBoard heights since it's now wrapped differently */
+.task-board-wrapper {
+    flex: 1;
+    min-height: 0;
+}
+
+/* Timeline Activity */
+.ocx-timeline {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    max-height: 300px;
+    /* Constrain timeline height so inspector is reachable */
+}
+
+.ocx-timeline-item {
+    display: flex;
+    gap: 12px;
+    position: relative;
+}
+
+.ocx-timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 16px;
+    bottom: -16px;
+    width: 2px;
+    background: var(--border-subtle);
+    z-index: 1;
+}
+
+.ocx-timeline-item:last-child::before {
+    display: none;
+}
+
+.ocx-timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    margin-top: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+.ocx-timeline-item.healthy .ocx-timeline-dot {
+    background: var(--accent-emerald);
+}
+
+.ocx-timeline-item.critical .ocx-timeline-dot {
+    background: var(--accent-red);
+}
+
+.ocx-timeline-item.warning .ocx-timeline-dot {
+    background: var(--accent-amber);
+}
+
+.ocx-timeline-body {
+    flex: 1;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ocx-timeline-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.ocx-timeline-head strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.ocx-timeline-head span {
+    font-size: 11px;
+    color: var(--text-tertiary);
+}
+
+.ocx-timeline-detail {
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.ocx-timeline-meta {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Task Inspector Body */
+.ocx-task-inspector-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ocx-form-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ocx-divider {
+    height: 1px;
+    background: var(--border-subtle);
+    margin: 8px -20px;
+}
+
+.ocx-danger-btn {
+    color: var(--accent-red) !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+.ocx-danger-btn:hover {
+    background: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Dependencies Graph display in Inspector */
+.ocx-dependency-graph {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius-md);
+    padding: 16px;
+    gap: 12px;
+}
+
+.ocx-dep-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.ocx-dep-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-tertiary);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.ocx-dep-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.ocx-dep-node {
+    background: var(--bg-main);
+    border: 1px dashed var(--border-subtle);
+    border-radius: var(--border-radius-sm);
+    padding: 8px 12px;
+    font-size: 12px;
+    font-family: var(--font-base);
+    color: var(--text-secondary);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ocx-dep-node:hover {
+    border-color: var(--text-tertiary);
+}
+
+.ocx-dep-node.active {
+    background: var(--accent-primary);
+    color: white;
+    border-style: solid;
+    border-color: var(--accent-secondary);
+    font-weight: 500;
+}
+
+.ocx-dependency-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: var(--border-radius-sm);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.ocx-dependency-option:hover {
+    background: var(--bg-surface);
+}
+
+.ocx-dependency-title {
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 180px;
+}
+
+/* Comments section */
+.ocx-comments {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ocx-comment {
+    background: var(--bg-surface);
+    border-radius: var(--border-radius-md);
+    padding: 12px;
+}
+
+.ocx-comment-meta {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-bottom: 6px;
+}
+
+.ocx-comment-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+.ocx-empty {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
+
+/* ---- TASK BOARD (KANBAN) STYLES ---- */
+.oc-task-board {
+    display: flex;
+    gap: 16px;
+    height: 100%;
+    min-height: 0;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    /* Room for scrollbar */
+}
+
+.oc-kanban-column {
+    flex: 1 0 280px;
+    /* Base width 280px, allow growing but not shrinking */
+    min-width: 280px;
+    background-color: var(--bg-surface);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.oc-kanban-column:hover {
+    border-color: rgba(47, 109, 246, 0.1);
+    box-shadow: 0 4px 12px rgba(47, 109, 246, 0.03);
+}
+
+.active-drop-target {
+    background-color: rgba(47, 109, 246, 0.03);
+    border-color: var(--primary-blue);
+    position: relative;
+}
+
+.active-drop-target::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px dashed rgba(47, 109, 246, 0.3);
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.oc-column-header {
+    padding: 14px 16px;
+    background-color: transparent;
+    border-bottom: 1px solid var(--border-subtle);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.oc-column-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.oc-column-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.oc-col-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.oc-dot-inbox {
+    background-color: var(--text-tertiary);
+}
+
+.oc-dot-in-progress {
+    background-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(47, 109, 246, 0.1);
+}
+
+.oc-dot-review {
+    background-color: var(--status-warning);
+}
+
+.oc-dot-done {
+    background-color: var(--status-healthy);
+}
+
+.oc-column-title {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.oc-col-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+}
+
+.oc-review-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.oc-review-btn {
+    appearance: none;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-main);
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.oc-review-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.oc-review-btn.active {
+    background: rgba(47, 109, 246, 0.08);
+    border-color: rgba(47, 109, 246, 0.2);
+    color: var(--primary-blue);
+}
+
+.oc-column-body {
+    padding: 12px;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.oc-task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+/* Base Task Card Styling to ensure it matches the new theme */
+.oc-task-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius-md);
+    padding: 14px;
+    cursor: grab;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    user-select: none;
+}
+
+.oc-task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(47, 109, 246, 0.15);
+}
+
+.oc-task-card:active {
+    cursor: grabbing;
+}
+
+.oc-task-card.is-dragging {
+    opacity: 0.5;
+    transform: scale(0.98);
+}
+
+.oc-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.oc-task-id {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
+
+.oc-card-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.oc-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.oc-agent-avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.oc-card-due {
+    font-size: 11px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.oc-card-due.overdue {
+    color: var(--accent-red);
+    font-weight: 500;
+}
+
+.oc-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: auto;
+}
+
+.oc-task-tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* Card Status Highlights */
+.oc-card-approval {
+    border-left: 3px solid var(--status-warning);
+}
+
+.oc-card-blocked {
+    border-left: 3px solid var(--status-critical);
+    background: rgba(239, 68, 68, 0.02);
+}
+
+.oc-card-review {
+    border-left: 3px solid var(--primary-blue);
+}

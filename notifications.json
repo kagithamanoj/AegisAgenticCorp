@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "type": "alert",
+        "title": "High Token Usage Detected",
+        "message": "Dev has consumed 45,000 tokens in the last hour working on the Coinbase API integration.",
+        "time": "10 mins ago",
+        "read": false
+    },
+    {
+        "id": 2,
+        "type": "success",
+        "title": "Task Completed: UX Audit",
+        "message": "Zara has successfully moved \"Anthropic UX Audit\" to Review phase.",
+        "time": "1 hour ago",
+        "read": true
+    },
+    {
+        "id": 3,
+        "type": "system",
+        "title": "System Re-calibration",
+        "message": "The M2.5 inference engine was briefly throttled but is now operating within normal parameters.",
+        "time": "3 hours ago",
+        "read": true
+    }
+]
